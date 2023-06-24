@@ -1,13 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:wght@300&family=Roboto+Mono:wght@300&family=Roboto+Slab:wght@500&family=Varela+Round&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #24353f;
+  font-family: "Varela Round", sans-serif;
+}
+.note i {
+  transition: all 0.5s;
+}
+.div {
+  margin-bottom: 10px;
+}
+.colNotList {
+  width: fit-content;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.edit {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+}
+.edit:hover {
+  transform: rotate(-50deg);
+}
+
+.bg-light {
+  color: #fff;
+  background-color: transparent !important;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-size: 1.5rem;
+}
+.navActive {
+  background-color: #2b5065;
+}
+
+.note {
+  background: linear-gradient(#f9efaf, #f7e98d);
+  transition: all 0.3s;
+}
+
+.note:hover {
+  box-shadow: 0px 23px 93px 1px rgba(0, 0, 0, 0.75);
 }
