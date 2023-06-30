@@ -6,7 +6,7 @@ export const getAPIData = createAsyncThunk("note/displayData", async () => {
     try {
         const auth = localStorage.getItem("token")
         const { data } = await axios
-        .get("https://shaban-hamdy-to-do-list-nodejs.onrender.com/note/getNote", {
+        .get("https://shaban-hamdy-to-do-list-nodejs.vercel.app/note/getNote", {
             headers: { auth }
         })
         return data.note

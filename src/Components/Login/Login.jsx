@@ -1,12 +1,16 @@
 import axios from "axios";
 import Joi from "joi";
 import React, { useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { AuthNoteContext } from "../Context/AuthNoteContext/AuthNoteContext";
 import { ClipLoader } from "react-spinners";
+import { AuthNoteContext } from "../Context/AuthNoteContext/AuthNoteContext";
 
 export const Login = () => {
   const { saveUserData } = useContext(AuthNoteContext);
+  const d = useSelector((state) => state.authSlice);
+
+
   //============ useState for set back error messages
   const [errBackMessage, setErrBackMessage] = useState([]);
   //============ useState for set back error messages
@@ -25,11 +29,10 @@ export const Login = () => {
         .email({ tlds: { allow: false } })
         .required(),
 
-      password: Joi.string().min(4)
-        .messages({
-          "string.pattern.base":
-            "password must to be contain min 8 letters capital and small  and spacial characters ",
-        }),
+      password: Joi.string().min(4).messages({
+        "string.pattern.base":
+          "password must to be contain min 8 letters capital and small  and spacial characters ",
+      }),
     });
     return schema.validate(user, { abortEarly: false });
   };
@@ -50,7 +53,7 @@ export const Login = () => {
     } else {
       try {
         const { data } = await axios.post(
-          "https://shaban-hamdy-to-do-list-nodejs.onrender.com/user/login",
+          "https://shaban-hamdy-to-do-list-nodejs.vercel.app/user/login",
           user
         );
         localStorage.setItem("token", "shaban__" + data.token);
@@ -130,10 +133,9 @@ export const Login = () => {
 
             <div className="div my-4">
               {isLoading ? (
-               <button className="btn btn-primary my-3 float-end">
-               <ClipLoader color="#fff" size={20} />
-             </button>
-             
+                <button className="btn btn-primary my-3 float-end">
+                  <ClipLoader color="#fff" size={20} />
+                </button>
               ) : (
                 <button className="btn btn-primary my-3 float-end">
                   Login

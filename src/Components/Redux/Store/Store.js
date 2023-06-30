@@ -3,8 +3,6 @@ import displayData from "../APPSlice/displaySlice"
 import deleteData from "../APPSlice/deleteSlice"
 import addData from "../APPSlice/addToListSlice"
 import updateDataSlice from "../APPSlice/addToListSlice"
-import authSlice from "../AuthSlice/authSlice";
-import LoginData from "../APPSlice/loginSlice";
 
 
 
@@ -15,8 +13,8 @@ const Store = configureStore({
         deleteData,
         addData,
         updateDataSlice,
-        authSlice,
-        LoginData
+       
+      
     }
 })
 

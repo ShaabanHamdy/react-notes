@@ -62,7 +62,7 @@ export const Register = () => {
       setErrFrontMessage(validationResponse.error?.details);
     } else {
       try {
-        await axios.post("https://shaban-hamdy-to-do-list-nodejs.onrender.com/user/addUser", user);
+        await axios.post("https://shaban-hamdy-to-do-list-nodejs.vercel.app/user/addUser", user);
         goToLogin();
       } catch (error) {
         if (error.response?.data?.message === "validation error") {

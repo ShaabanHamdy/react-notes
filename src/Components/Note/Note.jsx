@@ -82,9 +82,6 @@ export const Note = () => {
     }
   };
   //========================== useEffect for  add and update and delete data
-
-  
-
   useEffect(() => {
     dispatch(getAPIData());
   }, [data]);

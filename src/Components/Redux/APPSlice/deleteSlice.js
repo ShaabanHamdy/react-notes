@@ -25,7 +25,7 @@ export const deleteFromAPI = createAsyncThunk("note/deleteData", async (id) => {
             try {
                 const auth = localStorage.getItem("token")
                 await axios
-                    .delete(`https://shaban-hamdy-to-do-list-nodejs.onrender.com/note/deleteNote/${id}`, {
+                    .delete(`https://shaban-hamdy-to-do-list-nodejs.vercel.app/note/deleteNote/${id}`, {
                         headers: { auth }
                     })
                 return [id]

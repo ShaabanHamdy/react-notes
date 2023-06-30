@@ -17,7 +17,7 @@ export const addToApi = createAsyncThunk("note/addToApi", async (user) => {
     try {
         const auth = localStorage.getItem("token")
         const data = await axios.post(
-            "https://shaban-hamdy-to-do-list-nodejs.onrender.com/note/addNote",
+            "https://shaban-hamdy-to-do-list-nodejs.vercel.app/note/addNote",
             user,
             {
                 headers: { auth },

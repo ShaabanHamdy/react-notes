@@ -27,7 +27,7 @@ export const updateAPI = createAsyncThunk("note/updateData", async (value) => {
 
             try {
                 const data = await axios.put(
-                    `https://shaban-hamdy-to-do-list-nodejs.onrender.com/note/updateNote/${id}`,
+                    `https://shaban-hamdy-to-do-list-nodejs.vercel.app/note/updateNote/${id}`,
                     userData,
                     {
                         headers: { auth },
