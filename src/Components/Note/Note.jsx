@@ -15,10 +15,11 @@ import { getAPIData } from "../Redux/APPSlice/displaySlice";
 import { addToApi } from "../Redux/APPSlice/addToListSlice";
 import { deleteFromAPI } from "../Redux/APPSlice/deleteSlice";
 import { updateAPI } from "../Redux/APPSlice/updateSlice";
+import { SyncLoader } from "react-spinners";
 
 //====================================================================== note
 export const Note = () => {
-  //========================= useSelector for displayData 
+  //========================= useSelector for displayData
   const { data } = useSelector((state) => state.displayData);
   // =============================== dispatch to use redux function
   const dispatch = useDispatch();
@@ -88,21 +89,34 @@ export const Note = () => {
   useEffect(() => {
     if (!data) {
       dispatch(getAPIData());
-      
     }
+  }, []);
+  //===========================================================================================
+  const [isShown, setIsShown] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(function () {
+      setIsShown(false);
+    }, 500);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   //===============================================================================================================================================================
+
   return (
     <>
       {/* ====================================================Modal================== */}
       <div className="row">
         <div className=" my-5">
-          <button className="btn btn-primary float-end fw-bold fs-5" onClick={addNoteBtn}>
-          {/* <BiPlusCircle/> */}
-          <HiOutlinePlusCircle className="me-1 fs-4"/>
-          
-           Add New
+          <button
+            className="btn btn-primary float-end fw-bold fs-5"
+            onClick={addNoteBtn}
+          >
+            {/* <BiPlusCircle/> */}
+            <HiOutlinePlusCircle className="me-1 fs-4" />
+            Add New
           </button>
           <div className="clearfix"></div>
         </div>
@@ -157,8 +171,11 @@ export const Note = () => {
         </MDBModal>
       </div>
       {/* ==================================================== Data  ================== */}
-
-      {data?.length ? (
+      {isShown ? (
+        <div className=" text-center">
+          <SyncLoader  size={25} className=" text-center" color="#36d7b7" />
+        </div>
+      ) : data?.length ? (
         <div className="row">
           {data.map((elm, index) => (
             <div key={index} className="col-md-4 colNotList">
