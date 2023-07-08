@@ -49,26 +49,35 @@ body {
 
 
 .LoginForm{
-  width: 50%;
+  width: 60%;
 }
 .register-form{
-  width: 50%;
+  width: 60%;
 }
 @media screen and (min-width : 770px) and (max-width : 992px) {
+  .navbar-toggler{
+    background-color: rgb(255, 255, 254);
+  }
   .LoginForm{
     width: 75%;
   }
   .register-form{
     width: 75%;
   }
-  
+  .navbar-toggler{
+    background-color: rgb(255, 255, 254);
+  }
 }
 @media screen and (max-width : 768px) {
   .LoginForm{
-    width: 110%;
+    width: 120%;
+  }
+  .navbar-toggler{
+    background-color: rgb(255, 255, 254);
   }
   .register-form{
-    width: 100%;
+    width: 110%;
   }
+
   
 }
