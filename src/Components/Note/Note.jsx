@@ -1,4 +1,3 @@
-// import { PulseLoader } from "react-spinners";
 import {
   MDBModal,
   MDBModalContent,
@@ -11,11 +10,10 @@ import { HiOutlinePlusCircle } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import NoteEmpty from "../NoteEmpty/NoteEmpty";
 import { getAPIData } from "../Redux/APPSlice/displaySlice";
-
+import { SyncLoader } from "react-spinners";
 import { addToApi } from "../Redux/APPSlice/addToListSlice";
 import { deleteFromAPI } from "../Redux/APPSlice/deleteSlice";
 import { updateAPI } from "../Redux/APPSlice/updateSlice";
-import { SyncLoader } from "react-spinners";
 
 //====================================================================== note
 export const Note = () => {

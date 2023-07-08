@@ -106,7 +106,7 @@ export const Register = () => {
   return (
     <>
       <div className="container text-white">
-        <div className="register w-50 m-auto">
+        <div className="register-form  m-auto">
           <h2 className="text-center mb-5">Register</h2>
           <form onSubmit={submitForm}>
             <div className="div">

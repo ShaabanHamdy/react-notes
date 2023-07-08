@@ -103,7 +103,9 @@ export const Login = () => {
   return (
     <>
       <div className="container p-5 ">
-        <div className="register w-50 m-auto text-white">
+       <div className="row">
+        <div className="col-md-12">
+        <div className=" LoginForm m-auto text-white">
           <h2 className="text-center mb-5">Login</h2>
           <form onSubmit={submitForm}>
             <div className="div my-3">
@@ -111,7 +113,7 @@ export const Login = () => {
               <input
                 onChange={getInputValue}
                 type="email"
-                className="form-control"
+                className="form-control w-100"
                 name="email"
               />
 
@@ -145,6 +147,8 @@ export const Login = () => {
             </div>
           </form>
         </div>
+        </div>
+       </div>
       </div>
     </>
   );
